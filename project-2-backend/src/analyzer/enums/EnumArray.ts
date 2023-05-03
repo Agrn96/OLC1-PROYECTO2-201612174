@@ -1,0 +1,7 @@
+export enum ArrayTypes {
+  INT_ARRAY,
+  DOUBLE_ARRAY,
+  STRING_ARRAY,
+  BOOLEAN_ARRAY,
+  CHAR_ARRAY,
+}

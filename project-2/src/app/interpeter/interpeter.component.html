@@ -1,0 +1,74 @@
+<h2>Entrada</h2>
+<form>
+  <div class="row">
+    <div class="col-md-6">
+      <input
+        type="file"
+        name="txt-file"
+        id="txt-file"
+        (change)="handleFile($event)"
+      />
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-primary" (click)="save()">
+        Guardar
+      </button>
+      <input
+        type="text"
+        name="filename"
+        id="filename"
+        placeholder="nombre de archivo"
+        [(ngModel)]="filename"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <textarea
+        name="input-compiler"
+        id="input-compiler"
+        cols="120"
+        rows="30"
+        [(ngModel)]="input_compiler"
+      ></textarea>
+    </div>
+    <div class="col-md-6">
+      <textarea
+        name="output-compiler"
+        id="output-compiler"
+        cols="120"
+        rows="30"
+        readonly
+        [(ngModel)]="output_compiler"
+      ></textarea>
+    </div>
+    <div class="row">
+      <button type="button" (click)="onClickParser()">Parser</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Linea</th>
+          <th scope="col">Columna</th>
+          <th scope="col">Entorno</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sym of symbols">
+          <td>{{ sym.id }}</td>
+          <td>{{ sym.datatype }}</td>
+          <td>{{ sym.line }}</td>
+          <td>{{ sym.column }}</td>
+          <td>{{ sym.env }}</td>
+          <td>{{ sym.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>

@@ -1,0 +1,51 @@
+<h2>Entrada</h2>
+<form>
+  <div class="row">
+    <div class="col-md-6">
+      <input
+        type="file"
+        name="txt-file"
+        id="txt-file"
+        (change)="handleFile($event)"
+      />
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-primary" (click)="save()">
+        Guardar
+      </button>
+      <input
+        type="text"
+        name="filename"
+        id="filename"
+        placeholder="nombre de archivo"
+        [(ngModel)]="filename"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <textarea
+        name="input-compiler"
+        id="input-compiler"
+        cols="120"
+        rows="30"
+        [(ngModel)]="input_compiler"
+      ></textarea>
+    </div>
+    <div class="col-md-6">
+      <textarea
+        name="output-compiler"
+        id="output-compiler"
+        cols="120"
+        rows="30"
+        [(ngModel)]="output_compiler"
+      ></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" (click)="onClickParser()">Parser</button>
+  </div>
+</form>
+<div class="row">
+  <div id="graph"></div>
+</div>
